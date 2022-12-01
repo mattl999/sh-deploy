@@ -1,0 +1,45 @@
+
+.shop-items-container {
+  display: flex;
+}
+.shop-box {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+}
+.hover-animation {
+  transition: 0.3s;
+}
+.hover-animation:hover {
+  background-color: rgba(152, 159, 166, 0.05);
+  box-shadow:  4px 5px 2px rgba(0,0,0,.5);
+  transition: 0.25s;
+  transform: scale(1.015);
+}
+.shop-img {
+  border-radius: 0;
+  transition: 0.1s;
+}
+.shop-img:hover{
+  transition: 0.3s;
+}
+.cb-tweak {
+  color: whitesmoke
+}
+.item-name {
+  font-size: 18px;
+  font-weight: 100;
+  font-family: "Josefin Sans", sans-serif;
+}
+.price {
+  color: rgb(61, 115, 133);
+  font-size: 20px;
+}
+.shop-link {
+  text-decoration: none;
+  color: var(--font-color);
+}
+.shop-link:hover {
+  text-decoration: none;
+  color: var(--font-color);
+}

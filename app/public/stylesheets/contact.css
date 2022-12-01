@@ -1,0 +1,78 @@
+.contact-section {
+  width: 100%;
+  max-width: 100%; 
+}
+.contact-wrapper {
+  width: 75%;
+  min-width: 300px;
+}
+.contact-container {
+  background-image: url(/img/backgrounds/contact-bg.jpg);
+  color: rgb(206, 206, 206);
+
+  background-size: 300px;
+  max-width: 900px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+#contact-section-container {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.contact-input {
+  background-color: rgba(255, 255, 255, 0.53);
+  background-color: #a8b3bd;
+  color: black;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 18px;
+  border: 1px solid rgba(101, 101, 101, 1);
+  border: none;
+  padding-left: 8px;
+}
+
+
+@media screen and (max-width: 500px){
+  .contact-input{
+    font-size: 13px;
+    font-weight: 100;
+    padding-left: 4px !important;
+  }
+}
+
+.contact-btn {
+  background-color: rgb(168, 179, 189);
+  color: rgb(36, 36, 36);
+
+  border-radius: 0;
+}
+.contact-btn:hover {
+  background-color: rgb(134, 134, 134);
+  color: black;
+}
+@media screen and (max-width: 400px) {
+  .contact-header {
+    font-size: 65px !important;
+  }
+}
+@keyframes fadeAway {
+  0% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
+.fade {
+  animation-name: fadeAway;
+  animation-duration: 3s;
+}

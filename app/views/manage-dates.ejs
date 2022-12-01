@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/manage-dates.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/admin.css">
+  <script src="/javascripts/admin.js"></script>
+  <title>Manage Dates</title>
+</head>
+
+<body>
+  <form action="/admin/logout" method="post">
+    <button class="logout">Logout</button>
+  </form>
+  <div class="wrapper p-3">
+    <div class="wrap-col">
+
+      <form action="/admin/create" method="post" class="add-form p-4">
+        <h2>Add New Tour Date</h2>
+        <div class="row ">
+          <label for="date">Date</label><br>
+          <input type="date" name="date" required>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <label for="time">Show Time</label><br>
+          <input class="intro-modal-input wake-up col-3" type="text" name="time" id="time" placeholder="ex. 8:00" required>
+          <select name="meridian" class="col-3" id="meridian">
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+          </select>
+        </div>
+        <div class="row mx-2">
+          <label for="venue">Venue</label><br>
+          <input type="text" value="" name="venue" placeholder="ex. Sneaky Dee's" required>
+        </div>
+        <div class="row mx-2">
+          <label for="city">City</label><br>
+          <input type="text" value="" name="city" placeholder="ex. Toronto" required>
+        </div>
+        <div class="row mx-2">
+          <label for="province">Province</label><br>
+          <input type="text" value="" name="province" placeholder="ex. ON or QC" required>
+        </div>
+        <div class="row mx-2">
+          <label for="ticketLink">Ticket Link (Full Url from Ticket Page)</label><br>
+          <input type="text" value="" name="ticketLink" placeholder="ex. https://www.ticketweb.ca/event/emo-night-toronto-at-sneaky-sneaky-dees-concert-venue-tickets/12185015">
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+      <h1 class="mt-5 admin-header">Currently Listed Tour Dates</h1>
+      <% if(!tourDates.length){ %>
+      <p> No tour dates currently listed</p>
+      <%  }%>
+      <% tourDates.forEach(function(el, idx) { %>
+      <div class="<%= idx%2 === 0 ? 'container-fluid dark bof py-2' : 'container-fluid light bof py-2'%>">
+        <div class="left-side">
+          <p class="mx-2 my-1 ">
+            <%=   el.month  %>
+            <%=   el.day  %>&nbsp;
+            <%=   el.year  %>,&nbsp;
+            <%=   el.time  %>.&nbsp;</p>
+          </br>
+          <p class="mx-2 my-1 "><%=   el.venue  %>,&nbsp;&nbsp;
+            <%=   el.city  %>,&nbsp;
+            <%=   el.province  %>
+          </p>
+          <a class="mx-2 my-1" href="<%=   el.ticketLink  %>" id="link" target="_blank">Ticket Link</a>
+        </div>
+        <div class="mx-2 my-1">
+          <a href="/admin/edit/<%= el.id %>"> <button>Edit</button></a>
+          <button onclick="deleteDate(event)" data-id="<%= el.id %>">Delete</button>
+
+        </div>
+
+      </div>
+      <% }) %>
+
+    </div>
+  </div>
+</body>
+
+</html>
