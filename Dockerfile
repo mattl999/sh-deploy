@@ -12,7 +12,7 @@ ENV MONGO_DB_USERNAME=matt \
     NODE_ENV=production
 
 
-RUN mkdir -p /home/app
+RUN mkdir -p /home/app        
 
 COPY ./app /home/app
 
@@ -20,8 +20,9 @@ COPY ./app /home/app
 WORKDIR /home/app
 
 # will execute npm install in /home/app because of WORKDIR
-RUN npm install
+RUN npm install \
+        npm install pm2 -g         
 
 # no need for /home/app/server.js because of WORKDIR
-CMD ["pm2", "start", "bin/www"]
+CMD ["pm2-runtime","bin/www"]
 
