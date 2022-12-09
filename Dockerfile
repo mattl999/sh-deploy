@@ -7,7 +7,7 @@ ENV MONGO_DB_USERNAME=matt \
     PASS=chungus123 \
     USERNAME2=josh \
     PASS2=chungus321 \
-    PORT=3000 \
+    PORT=80 \
     SENDGRID_API_KEY=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 \
     NODE_ENV=production
 
