@@ -11,7 +11,8 @@ The project consists of a Bootstrap/ejs frontend, and a small Node.js/MongoDB ba
 
 # Visit Website :arrow_down:
 
-https://www.summerheightsband.com/
+<a href="https://www.summerheightsband.com/" target="_blank">https://www.summerheightsband.com/</a>
+
 
 ## Technologies Used:
 
