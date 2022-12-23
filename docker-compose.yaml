@@ -1,0 +1,6 @@
+version: '3'
+services:
+  my-app:
+    image: 747486326082.dkr.ecr.us-east-2.amazonaws.com/summer-heights:latest
+    ports:
+    - 3000:3000
